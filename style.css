@@ -472,79 +472,192 @@ nav ul li a:hover::after {
   color: white;
 }
 
+/* ===== ABOUT SECTION ===== */
 .about {
-  background: linear-gradient(135deg, #f8fff8, #ffffff);
-  padding: 4rem 2rem;
+  padding: 60px 20px;
+  background: #f9f9f9;
   text-align: center;
 }
 
 .about h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: black;
-  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: #333;
+  font-weight: 700;
 }
 
+/* Content Layout */
 .about-content {
   display: flex;
-  flex-direction: column;
-  align-items: left;
-  gap: 2rem;
-  max-width: 1100px;
-  margin: 0 auto;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
 }
 
-.about-image {
-  flex: 1;
-  max-width: 350px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-.about-image img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.about-image img:hover {
-  transform: scale(1.05);
-}
-
+/* About Text Styling */
 .about-text {
-  flex: 2;
-  text-align: left;
-  background-color: #f9f9f9;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  text-align: justify; /* aligns text nicely on both sides */
+  max-width: 900px;    /* limits line length for readability */
+  margin: 0 auto 2rem auto; /* centers content with spacing below */
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #444;
 }
 
 .about-text p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #444;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
+.about-text strong {
+  color: #2e7d32; /* highlight key words in green */
+}
+
+@media screen and (max-width: 768px) {
+  .about-text {
+    font-size: 1rem;
+    padding: 0 1rem; /* small padding on mobile */
+    line-height: 1.6;
+  }
+}
+
+/* Images Section */
+.about-images {
+  flex: 1 1 400px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.about-images img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.about-images img:hover {
+  transform: scale(1.05);
+}
+
+/* Icons Section */
 .about-icons {
   display: flex;
   justify-content: center;
-  gap: 2.5rem;
-  margin-top: 2.5rem;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
-.about-icons .icon-box {
+.icon-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
   text-align: center;
-  max-width: 180px;
+  width: 220px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s, background 0.3s;
 }
 
-.about-icons i {
+.icon-box i {
   font-size: 2rem;
   color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+.icon-box p {
+  font-weight: 600;
+  color: #333;
+}
+
+.icon-box:hover {
+  background: #2e7d32;
+  color: #fff;
+  transform: translateY(-8px);
+}
+
+.icon-box:hover i {
+  color: #fff;
+}
+
+/* ===== RESPONSIVENESS ===== */
+@media (max-width: 992px) {
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+
+  .about-images {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .about h2 {
+    font-size: 1.8rem;
+  }
+
+  .icon-box {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .about-images img {
+    max-width: 100%;
+  }
+}
+
+/* About Stats Section with Icons */
+.about-stats {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.about-stats .stat-box i {
+  font-size: 2.5rem;
+  color: #ffd166; /* gold accent */
   margin-bottom: 0.5rem;
+}
+
+.about-stats .stat-box h3 {
+  font-size: 2.5rem;
+  color: #2e7d32; /* green accent */
+  margin-bottom: 0.3rem;
+}
+
+.about-stats .stat-box p {
+  font-size: 1.1rem;
+  color: #555;
+  margin: 0;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .about-stats {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .about-stats .stat-box i {
+    font-size: 2rem;
+  }
+
+  .about-stats .stat-box h3 {
+    font-size: 2rem;
+  }
 }
 
 #contact {
